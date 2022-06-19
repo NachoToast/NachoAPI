@@ -6,7 +6,6 @@ export interface ServerProps {
 }
 
 export class Server {
-    private unusedThing = '';
     private readonly _app: Express = express();
 
     public constructor({ port }: ServerProps) {

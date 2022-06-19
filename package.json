@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "main": "build/index.js",
-    "repository": "",
+    "repository": "https://github.com/NachoToast/NachoAPI.git",
     "author": "NachoToast <32235595+NachoToast@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {

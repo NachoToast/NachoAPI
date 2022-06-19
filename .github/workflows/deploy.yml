@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-    on_success:
+    deploy:
         runs-on: ubuntu-latest
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         steps:
@@ -19,8 +19,3 @@ jobs:
                   password: ${{ secrets.PASSWORD }}
                   port: ${{ secrets.PORT }}
                   script: ./websites/nachoAPI.sh
-    on_failure:
-        runs-on: ubuntu-latest
-        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-        steps:
-            - run: echo 'CI failed, not deploying'

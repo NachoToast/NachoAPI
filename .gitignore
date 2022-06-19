@@ -1,5 +1,13 @@
+# Workspace
 package-lock.json
 *.log
+.vscode/
+
+# Secrets
 config.json
 
+# Dependencies
 node_modules/
+
+# Compiled
+build/

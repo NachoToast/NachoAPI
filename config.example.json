@@ -1,3 +1,10 @@
 {
-    "port": 5000
+    "port": 5000,
+    "modules": {
+        "spotify": {
+            "disabled": false,
+            "clientId": "abc123",
+            "clientSecret": "abc123"
+        }
+    }
 }

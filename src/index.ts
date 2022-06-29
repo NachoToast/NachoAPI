@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { Config } from './Config';
-import { Server } from './server';
+import { Server } from './Server';
 
 import config from '../config.json';
 const version = process.env.npm_package_version || require('../package.json').version;

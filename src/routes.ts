@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { routes as SpotifyRoutes } from './modules/Spotify/routes';
-import { Config } from './Config';
+import { Config } from './@types/Config';
 
 function moduleNotEnabled(moduleName: keyof Config['modules']): (req: Request, res: Response) => void {
     return (_, res) => {

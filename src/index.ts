@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { Config } from './Config';
+import { Config } from './@types/Config';
 import { Server } from './Server';
 
 import config from '../config.json';

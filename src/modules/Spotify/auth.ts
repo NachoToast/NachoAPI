@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
-import { Config } from '../../Config';
+import { Config } from '../../@types/Config';
 import { AccessToken } from './AccessToken';
 
 const {

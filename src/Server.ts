@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express, { Express } from 'express';
 import { router } from './routes';
-import { Config } from './Config';
+import { Config } from './@types/Config';
 
 export class Server {
     public readonly version: string;

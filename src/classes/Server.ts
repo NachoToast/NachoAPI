@@ -2,6 +2,7 @@ import cors from 'cors';
 import express, { Express } from 'express';
 import { router } from '../routes';
 import { Config } from '../@types/Config';
+import rateLimit from 'express-rate-limit';
 
 export class Server {
     public readonly version: string;
@@ -13,6 +14,16 @@ export class Server {
         this._app.use(cors());
 
         this._app.use(express.json());
+
+        // 30 requests per minute
+        this._app.use(
+            rateLimit({
+                windowMs: 60 * 1000,
+                max: 30,
+                standardHeaders: true,
+                legacyHeaders: false,
+            }),
+        );
 
         const modulesEnabled: string[] = [];
         const modulesDisabled: string[] = [];

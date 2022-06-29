@@ -2,12 +2,9 @@
     "port": 5000,
     "modules": {
         "spotify": {
-            "disabled": false,
+            "disabled": true,
             "clientId": "abc123",
             "clientSecret": "abc123"
-        },
-        "tech": {
-            "disabled": true
         }
     }
 }

@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
-import { Config } from '../../types/Config';
+import { Config } from '../../Config';
 import { AccessToken } from './AccessToken';
 
 const {
+    port,
     modules: {
         spotify: { clientId, clientSecret },
     },
@@ -18,7 +19,7 @@ export async function auth(req: Request, res: Response): Promise<void> {
     } else if (typeof code === 'string') {
         const body = new URLSearchParams();
         body.set('code', code);
-        body.set('redirect_uri', 'http://localhost:5000/spotify/auth');
+        body.set('redirect_uri', `http://localhost:${port}/spotify/auth`);
         body.set('grant_type', 'authorization_code');
 
         try {

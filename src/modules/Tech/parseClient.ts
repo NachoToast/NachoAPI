@@ -9,7 +9,7 @@ export class ParseClient {
         this.parse();
     }
 
-    private async parse(): Promise<void> {
+    private parse(): void {
         const file = JSON.parse(readFileSync(this.filename, 'utf-8')) as Monitor[];
 
         const numItems = file.length;
@@ -30,6 +30,6 @@ export class ParseClient {
             // );
         }
 
-        const aspectRatioSynonyms = new Set<string>('PICTURE_QUALITY');
+        // const aspectRatioSynonyms = new Set<string>('PICTURE_QUALITY');
     }
 }

@@ -1,6 +1,9 @@
 export interface Config {
     /** Port the API will listen on. */
-    port: number;
+    port?: number;
+
+    /** 'RateLimit-Bypass-Token' request header values. */
+    adminTokens?: string[];
 
     /** You can disable modules individually by changing the `disabled` key to true. */
     modules: {

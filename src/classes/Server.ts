@@ -11,9 +11,13 @@ export class Server {
 
     public constructor(version: string, config: Config) {
         this.version = version;
+        config.port ??= 5000;
+
         this._app.use(cors());
 
         this._app.use(express.json());
+
+        const adminTokens = new Set<string>(config.adminTokens);
 
         // 30 requests per minute
         this._app.use(
@@ -22,6 +26,20 @@ export class Server {
                 max: 30,
                 standardHeaders: true,
                 legacyHeaders: false,
+                skip: (req, res) => {
+                    const token = req.get('RateLimit-Bypass-Token');
+                    if (token === undefined) return false;
+                    if (typeof token !== 'string') {
+                        res.setHeader('RateLimit-Bypass-Response', `Expected string, got '${typeof token}'`);
+                        return false;
+                    }
+                    if (!adminTokens.has(token)) {
+                        res.setHeader('RateLimit-Bypass-Response', 'Invalid');
+                        return false;
+                    }
+                    res.setHeader('RateLimit-Bypass-Response', 'Valid');
+                    return true;
+                },
             }),
         );
 
@@ -50,8 +68,19 @@ export class Server {
 
         this._app.use(router);
 
-        this._app.listen(config.port, () => {
-            console.log(`Listening on port ${config.port}`);
+        const listener = this._app.listen(config.port, () => {
+            const addressInfo = listener.address();
+            if (typeof addressInfo === 'string') {
+                console.log(`Listening on ${addressInfo}`);
+            } else if (addressInfo === null) {
+                console.log("Listening on port NULL, that doesn't seem right");
+            } else {
+                console.log(
+                    `Listening on ${addressInfo.address.replace('::', 'localhost')}:${addressInfo.port} (${
+                        addressInfo.family
+                    })`,
+                );
+            }
         });
     }
 }

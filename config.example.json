@@ -5,6 +5,9 @@
             "disabled": false,
             "clientId": "abc123",
             "clientSecret": "abc123"
+        },
+        "tech": {
+            "disabled": true
         }
     }
 }

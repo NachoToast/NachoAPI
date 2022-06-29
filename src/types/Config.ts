@@ -13,5 +13,13 @@ export interface Config {
             clientId: string;
             clientSecret: string;
         };
+
+        /**
+         * The tech module does PBTech web scraping to collect statistics about
+         * monitors, PC parts, and other items.
+         */
+        tech: {
+            disabled: boolean;
+        };
     };
 }

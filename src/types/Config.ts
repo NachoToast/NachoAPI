@@ -17,12 +17,11 @@ export interface Config {
             clientSecret: string;
         };
 
-        /**
-         * The tech module does PBTech web scraping to collect statistics about
-         * monitors, PC parts, and other items.
-         */
-        tech: {
+        discord: {
             disabled: boolean;
+            clientId: string;
+            clientSecret: string;
+            redirectURI: string;
         };
     };
 }

@@ -6,6 +6,12 @@
             "disabled": true,
             "clientId": "abc123",
             "clientSecret": "abc123"
+        },
+        "discord": {
+            "disabled": true,
+            "clientId": "1234567890",
+            "clientSecret": "abc123",
+            "redirectURI": "https://api.nachotoast.com/discord"
         }
     }
 }

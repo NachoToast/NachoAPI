@@ -1,15 +1,13 @@
 name: Deploy
 
 on:
-  workflow_run:
-    workflows: [Node.js CI]
-    types: [completed]
-    branches: [main]
+  release:
+    types:
+      - "released"
 
 jobs:
     deploy:
         runs-on: ubuntu-latest
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         steps:
             - name: executing remote build process
               uses: appleboy/ssh-action@v0.1.4
@@ -18,4 +16,4 @@ jobs:
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
                   port: ${{ secrets.PORT }}
-                  script: ./websites/nachoAPI.sh
+                  script: ./services/nachoAPI.sh

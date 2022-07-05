@@ -5,9 +5,11 @@ package-lock.json
 
 # Secrets
 config.json
+serviceAccountKey.json
 
 # Dependencies
 node_modules/
 
 # Compiled
 build/
+generatedTokens.txt

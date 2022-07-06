@@ -23,5 +23,11 @@ export interface Config {
             clientSecret: string;
             redirectURI: string;
         };
+
+        uoaAdmin: {
+            disabled: boolean;
+            databaseName: string;
+            discordToken: string;
+        };
     };
 }

@@ -12,6 +12,11 @@
             "clientId": "1234567890",
             "clientSecret": "abc123",
             "redirectURI": "https://api.nachotoast.com/discord"
+        },
+        "uoaAdmin": {
+            "disabled": true,
+            "databaseName": "https://project-name-default-rtdb.region.firebasedatabase.app/",
+            "discordToken": "myDiscordBotToken"
         }
     }
 }

@@ -13,9 +13,13 @@ export class Server {
 
         this._app.use(express.json());
 
-        this._app.set(`trust_proxy`, 1);
+        if (!Global.devmode) {
+            this._app.set(`trust_proxy`, 1);
 
-        this._app.get(`/ip`, (req, res) => res.send(req.ip));
+            this._app.get(`/ip`, (req, res) => res.send(req.ip));
+        } else {
+            this._app.get(`/ip`, (req, res) => res.status(200).json(`Not available in development mode`));
+        }
 
         const adminTokens = new Set<string>(Global.config.adminTokens);
 

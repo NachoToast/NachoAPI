@@ -20,4 +20,4 @@ Then, follow these steps to set up a Firebase realtime database:
 2. Copy this key into the root level [serviceAccountKey.json](./serviceAccountKey.json) file.
 3. Make sure you put the database URL shown into the root [config.json](../../../config.json) file.
 
-Finally, fill out the fields in [config.json](./config.json) with their appropriate values (see [Config.ts](./src/@types/Config.ts) for more in-depth explanations of what each value should be). You can disable specific modules if you don't require them.
+Finally, fill out the fields in [config.json](./config.json) with their appropriate values (see [Config.ts](./src/types/Config.ts) for more in-depth explanations of what each value should be). You can disable specific modules if you don't require them.

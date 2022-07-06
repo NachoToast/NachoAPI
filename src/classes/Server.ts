@@ -13,6 +13,10 @@ export class Server {
 
         this._app.use(express.json());
 
+        this._app.set(`trust_proxy`, 1);
+
+        this._app.get(`/ip`, (req, res) => res.send(req.ip));
+
         const adminTokens = new Set<string>(Global.config.adminTokens);
 
         // 30 requests per minute

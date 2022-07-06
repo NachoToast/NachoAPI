@@ -2,6 +2,7 @@
     "port": 5000,
     "adminTokens": ["myToken"],
     "databaseURL": "https://project-name-default-rtdb.region.firebasedatabase.app/",
+    "numProxies": 0,
     "modules": {
         "spotify": {
             "disabled": true,

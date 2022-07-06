@@ -29,5 +29,9 @@ export interface Config {
             databaseName: string;
             discordToken: string;
         };
+
+        quotes: {
+            disabled: boolean;
+        };
     };
 }

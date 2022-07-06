@@ -17,6 +17,9 @@
             "disabled": true,
             "databaseName": "https://project-name-default-rtdb.region.firebasedatabase.app/",
             "discordToken": "myDiscordBotToken"
+        },
+        "quotes": {
+            "disabled": false
         }
     }
 }

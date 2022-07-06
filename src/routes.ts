@@ -3,6 +3,7 @@ import { Global } from './classes/Global';
 import { routes as SpotifyRoutes } from './modules/Spotify/routes';
 import { routes as DiscordRoutes } from './modules/Discord/routes';
 import { routes as UOAAdminRoutes } from './modules/UOAAdmin/routes';
+import { routes as QuoteRoutes } from './modules/QuoteAPI/routes';
 import { Config } from './types/Config';
 
 function moduleNotEnabled(router: Router, moduleName: keyof Config[`modules`]): void {
@@ -33,11 +34,18 @@ if (!modules.discord.disabled) {
     moduleNotEnabled(router, `discord`);
 }
 
-// ldab module
+// uoa admin module
 if (!modules.uoaAdmin.disabled) {
     UOAAdminRoutes(router);
 } else {
     moduleNotEnabled(router, `uoaAdmin`);
+}
+
+// quotes module
+if (!modules.quotes.disabled) {
+    QuoteRoutes(router);
+} else {
+    moduleNotEnabled(router, `quotes`);
 }
 
 export { router };

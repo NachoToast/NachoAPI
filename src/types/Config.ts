@@ -5,6 +5,9 @@ export interface Config {
     /** 'RateLimit-Bypass-Token' request header values. */
     adminTokens?: string[];
 
+    /** Firebase database URL. */
+    databaseURL: string;
+
     /** You can disable modules individually by changing the `disabled` key to true. */
     modules: {
         /**
@@ -26,7 +29,6 @@ export interface Config {
 
         uoaAdmin: {
             disabled: boolean;
-            databaseName: string;
             discordToken: string;
         };
 

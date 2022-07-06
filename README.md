@@ -10,7 +10,14 @@ If you want to setup your own version of this API, follow these steps:
 git clone https://github.com/NachoToast/NachoAPI.git
 cd NachoAPI/
 cp config.example.json config.json
+touch serviceAccountKey.json
 yarn # or npm install
 ```
 
-Then fill out the fields in [config.json](./config.json) with their appropriate values (see [Config.ts](./src/@types/Config.ts) for more in-depth explanations of what each value should be). You can disable specific modules if you don't require them.
+Then, follow these steps to set up a Firebase realtime database:
+
+1. Make a [Firebase project](https://console.firebase.google.com/u/0/) and generate a private key for a service account (in Project settings > Service accounts).
+2. Copy this key into the root level [serviceAccountKey.json](./serviceAccountKey.json) file.
+3. Make sure you put the database URL shown into the root [config.json](../../../config.json) file.
+
+Finally, fill out the fields in [config.json](./config.json) with their appropriate values (see [Config.ts](./src/@types/Config.ts) for more in-depth explanations of what each value should be). You can disable specific modules if you don't require them.

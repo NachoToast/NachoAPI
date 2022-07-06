@@ -1,6 +1,7 @@
 {
     "port": 5000,
     "adminTokens": ["myToken"],
+    "databaseURL": "https://project-name-default-rtdb.region.firebasedatabase.app/",
     "modules": {
         "spotify": {
             "disabled": true,
@@ -15,7 +16,6 @@
         },
         "uoaAdmin": {
             "disabled": true,
-            "databaseName": "https://project-name-default-rtdb.region.firebasedatabase.app/",
             "discordToken": "myDiscordBotToken"
         },
         "quotes": {
